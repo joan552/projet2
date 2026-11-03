@@ -1,12 +1,12 @@
 ﻿from fastapi import FastAPI
-#from prometheus_fastapi_instrumentator import Instrumentator
+from prometheus_fastapi_instrumentator import Instrumentator
 import time
 
 app = FastAPI()
 items = []
 
 # Ajoute la collecte des metriques et l'endpoint /metrics
-#python -m uvicorn main:app --reloadInstrumentator().instrument(app).expose(app)
+Instrumentator().instrument(app).expose(app)
 
 @app.get('/health')
 def health():

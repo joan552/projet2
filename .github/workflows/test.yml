@@ -39,6 +39,6 @@ jobs:
       - name: Construire et pousser l'image Docker
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./api
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/mon-api-fastapi:latest
